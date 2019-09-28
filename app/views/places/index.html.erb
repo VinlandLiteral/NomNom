@@ -24,12 +24,12 @@
       </div>
     <% end %>
 
-  <div class ="col-12">
-      <% @place.photos.each do |photo| %>
-        <div class="col-12 col-sm-6">
-        <% if photo.picture.present? %>
+
+
+  <% if photo.picture.present? %>
+    <div class ="col-12">
           <%= img_tag photo.picture.url, class: 'img-fluid' %>
-        <% end %>
+          <% end %>
         <% if photo.caption.present? %>
           <%= photo.caption %>
         <% end %>
