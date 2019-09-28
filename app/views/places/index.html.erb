@@ -23,6 +23,19 @@
        </blockquote>
       </div>
     <% end %>
+
+  <div class ="col-12">
+      <% @place.photos.each do |photo| %>
+        <div class="col-12 col-sm-6">
+        <% if photo.picture.present? %>
+          <%= img_tag photo.picture.url, class: 'img-fluid' %>
+        <% end %>
+        <% if photo.caption.present? %>
+          <%= photo.caption %>
+        <% end %>
+        <small><%= photo.user.email %></small>
+     </div>
+  <% end %>
   
   
    </div>
