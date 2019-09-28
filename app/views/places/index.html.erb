@@ -26,20 +26,15 @@
 
 
 
-  <% if photo.picture.present? %>
-    <div class ="col-12">
+    <% if place.photos.present? %>
+     <div class ="col-12">
           <%= img_tag photo.picture.url, class: 'img-fluid' %>
-          <% end %>
         <% if photo.caption.present? %>
           <%= photo.caption %>
         <% end %>
         <small><%= photo.user.email %></small>
-     </div>
-  <% end %>
-  
-  
-   </div>
+      </div>
+    <% end %>
 
-  
+ </div>
 <% end %>
-
