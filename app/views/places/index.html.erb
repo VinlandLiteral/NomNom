@@ -66,16 +66,19 @@
     <% end %>
 
 
-
-    <% if place.photos.present? %>
-     <div class ="col-12">
-          <%= img_tag photo.picture.url, class: 'img-fluid' %>
-        <% if photo.caption.present? %>
-          <%= photo.caption %>
-        <% end %>
-        <small><%= photo.user.email %></small>
-      </div>
+  
+    <% place.photos.each do |photo| %>
+        <div class = "col-12 ">
+          <% if photo.present? %>
+            <%= image_tag photo.picture.url, class: 'img-fluid' , :height=> "50%" , :width=> "25%" %>
+          <% end %>
+          <% if photo.caption.present? %>
+            <%= photo.caption %>
+          <% end %>
+          <small><%= photo.user.email %></small>
+        </div>
     <% end %>
-
+  
+  
  </div>
 <% end %>
